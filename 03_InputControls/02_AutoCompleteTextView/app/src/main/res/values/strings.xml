@@ -1,0 +1,13 @@
+<resources>
+
+    <!-- MainActivity -->
+    <string name="app_name">02_AutoCompleteTextView</string>
+    <string name="welcome">Bienvenido</string>
+
+    <string-array name="array_paises">
+        <item>Alemani</item>
+        <item>España</item>
+        <item>Italia</item>
+        <item>Francia</item>
+    </string-array>
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!-- MainActivity -->
+    <string name="app_name">02_AutoCompleteTextView</string>
+    <string name="welcome">Welcome</string>
+    <string name="paises_label">Write one country</string>
+
+    <string-array name="array_paises">
+        <item>Germany</item>
+        <item>Spain</item>
+        <item>Italy</item>
+        <item>France</item>
+        <item>Other</item>
+    </string-array>
+
+</resources>

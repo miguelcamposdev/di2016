@@ -3,11 +3,13 @@
     <!-- MainActivity -->
     <string name="app_name">02_AutoCompleteTextView</string>
     <string name="welcome">Bienvenido</string>
+    <string name="paises_label">Escriba el idioma</string>
 
     <string-array name="array_paises">
-        <item>Alemani</item>
+        <item>Alemania</item>
         <item>España</item>
         <item>Italia</item>
         <item>Francia</item>
+        <item>Otro</item>
     </string-array>
 </resources>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">03_RadioButtons</string>
+    <string name="question_videogames">¿Te gustan los videojuegos?</string>
+    <string name="yes">Sí</string>
+    <string name="no">No</string>
+    <string name="message_friki">Que fffffffffrrikiiii ere</string>
+    <string name="message_no_friki">¿Y qué haces?</string>
+    <string name="send">Enviar</string>
+    <string name="question_fifa">¿Te gusta el FIFA?</string>
+</resources>

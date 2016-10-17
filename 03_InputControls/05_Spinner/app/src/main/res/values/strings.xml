@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">05_Spinners</string>
+
+    <string-array name="weekdays_array">
+        <item>Lunes</item>
+        <item>Martes</item>
+        <item>Míercoles</item>
+        <item>Jueves</item>
+        <item>Viernes</item>
+        <item>Sábado</item>
+        <item>Domingo</item>
+    </string-array>
+
+</resources>

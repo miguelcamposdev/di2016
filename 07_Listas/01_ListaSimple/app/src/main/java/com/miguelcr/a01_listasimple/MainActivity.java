@@ -6,12 +6,15 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     private ListView listaComida;
     private String[] comidas = new String[6];
+    private int[] unidades = {0,0,0,0,0,0};
     private boolean[] rotations = {false,false,false,false,false,false};
+    private ArrayAdapter<String> adapterComidas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         // 3. Creamos un Adapter que nos permita dibujar los elementos
         // de nuestro array en el ListView
 
-        ArrayAdapter<String> adapterComidas = new ArrayAdapter<>(this,
+        adapterComidas = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1,comidas);
 
         // 4. Conectar el Adapter con el ListView
@@ -46,16 +49,32 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         String elementoSeleccionado = comidas[position];
+        TextView texto = (TextView) view;
+
 
         Toast.makeText(this, "Seleccionado: "+elementoSeleccionado, Toast.LENGTH_LONG).show();
 
-        if(rotations[position]) {
-            view.animate().rotationY(360).setDuration(2000).start();
+        /*if(rotations[position]) {
+            view.animate().rotationX(360).setDuration(2000).start();
         } else  {
-            view.animate().rotationY(-360).setDuration(2000).start();
-        }
+            view.animate().rotationX(-360).setDuration(2000).start();
+        }*/
+
+        unidades[position]++;
+        texto.setText(comidas[position]+" ( "+unidades[position]+" )");
 
         rotations[position] = !rotations[position];
 
+    }
+
+    public void resetListaComidas(View view) {
+        // Reseteamos el número de unidades de todas las comidas a 0.
+        for(int i=0; i<unidades.length; i++) {
+            unidades[i] = 0;
+        }
+
+        // Tenemos que redibujar los elementos de la lista
+        // haciendo uso del Adapter.
+        adapterComidas.notifyDataSetChanged();
     }
 }

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">07_AutoCompleteAlumnos</string>
+    <string-array name="students_array">
+        <item>Pepe Garcia</item>
+        <item>Juan Perez</item>
+        <item>Maria Alegria</item>
+    </string-array>
+
+</resources>

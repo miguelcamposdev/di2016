@@ -35,13 +35,20 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         // 3. Creamos un Adapter que nos permita dibujar los elementos
         // de nuestro array en el ListView
 
-        adapterComidas = new ArrayAdapter<>(this,
-                android.R.layout.simple_list_item_1,comidas);
+        adapterComidas = new ArrayAdapter<>(
+                this, // Contexto > el Activity en el que me encuentro
+                android.R.layout.simple_list_item_1, // layout con el que vamos a dibujar un elemento de la lista
+                comidas // listado de datos que queremos dibujar en la lista
+        );
 
         // 4. Conectar el Adapter con el ListView
         listaComida.setAdapter(adapterComidas);
 
         // Gestión del evento click sobre un elemento de la lista
+        // Al decir this, estamos diciendo que el MainActivity implementa
+        // la interfaz OnItemClickListener y por tanto está obligada a sobreescribir
+        // el método onItemClick de dicha interfaz. Ese método será el que
+        // ejecute cuando hagamos click en un elemento del ListView
         listaComida.setOnItemClickListener(this);
 
     }
@@ -66,6 +73,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         rotations[position] = !rotations[position];
 
     }
+
+
 
     public void resetListaComidas(View view) {
         // Reseteamos el número de unidades de todas las comidas a 0.

@@ -11,6 +11,7 @@
     tools:context="com.miguelcr.a01_conecta4.MainActivity">
 
     <ImageView
+        android:onClick="fichaSeleccionada"
         android:id="@+id/ficha1"
         android:layout_width="30dp"
         android:layout_height="30dp"
@@ -19,7 +20,7 @@
         android:layout_alignParentTop="true"
         />
 
-    <ImageView
+    <ImageView         android:onClick="fichaSeleccionada"
         android:id="@+id/ficha2"
         android:layout_width="30dp"
         android:layout_height="30dp"
@@ -27,6 +28,28 @@
         android:layout_toRightOf="@+id/ficha1"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="8dp"
+        />
+
+    <ImageView         android:onClick="fichaSeleccionada"
+        android:id="@+id/ficha3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_empty"
+        android:layout_toRightOf="@+id/ficha1"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="8dp"
+        />
+
+    <ImageView         
+        android:onClick="fichaSeleccionada"
+        android:id="@+id/ficha4"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_empty"
+        android:layout_toRightOf="@+id/ficha1"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="8dp"
+        
         />
 
 

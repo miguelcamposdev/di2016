@@ -38,10 +38,21 @@ public class MyAlumnoRecyclerViewAdapter extends RecyclerView.Adapter<MyAlumnoRe
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
         holder.textViewNombreAlumno.setText(holder.mItem.getNombre());
-        holder.textViewNumeroAsignaturas.setText(holder.mItem.getNumAsignaturas());
 
-        //TODO: setImage con Picasso
-        Picasso.with(ctx).load(holder.mItem.getUrlFoto()).into(holder.imageViewPhotoAlumno);
+        // Vamos a hacer un setText del número de asignaturas haciendo uso de una
+        // variable de strings.xml que tiene parámetros
+        int numeroAsignaturas = holder.mItem.getNumAsignaturas();
+        String stringNumeroAsignaturas = ctx.getResources().getString(R.string.num_asignaturas_alumno);
+        if(numeroAsignaturas==1) {
+            stringNumeroAsignaturas = ctx.getResources().getString(R.string.one_asignaturas_alumno);
+        }
+        String string = String.format(stringNumeroAsignaturas, numeroAsignaturas);
+        holder.textViewNumeroAsignaturas.setText(string);
+
+        Picasso.with(ctx)
+                .load(holder.mItem.getUrlFoto())
+                .resize(200,200)
+                .into(holder.imageViewPhotoAlumno);
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override

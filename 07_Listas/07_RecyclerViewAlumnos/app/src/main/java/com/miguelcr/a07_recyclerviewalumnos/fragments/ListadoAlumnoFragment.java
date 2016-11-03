@@ -11,8 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.miguelcr.a07_recyclerviewalumnos.R;
-import com.miguelcr.a07_recyclerviewalumnos.fragments.dummy.DummyContent;
-import com.miguelcr.a07_recyclerviewalumnos.fragments.dummy.DummyContent.DummyItem;
 import com.miguelcr.a07_recyclerviewalumnos.interfaces.IAlumnoClickListener;
 import com.miguelcr.a07_recyclerviewalumnos.pojos.Alumno;
 
@@ -69,9 +67,13 @@ public class ListadoAlumnoFragment extends Fragment {
             }
 
             List<Alumno> listadoAlumno = new ArrayList<>();
-            listadoAlumno.add(new Alumno("","Pepe",3));
-            listadoAlumno.add(new Alumno("","Pepe",3));
-            listadoAlumno.add(new Alumno("","Pepe",3));
+            listadoAlumno.add(new Alumno("https://pbs.twimg.com/profile_images/378800000705715000/6359097f8f7e91c476d1804b9446be26_400x400.png","Pepe",3));
+            listadoAlumno.add(new Alumno("https://pbs.twimg.com/profile_images/718588760003383296/2AG8omMO_400x400.jpg","María",2));
+            listadoAlumno.add(new Alumno("https://pbs.twimg.com/profile_images/2877768723/e32f9a8a76b9a41f89dce20832bf9b43_400x400.png","Juan",1));
+            listadoAlumno.add(new Alumno("https://pbs.twimg.com/profile_images/378800000705715000/6359097f8f7e91c476d1804b9446be26_400x400.png","Pepe",3));
+            listadoAlumno.add(new Alumno("https://pbs.twimg.com/profile_images/378800000705715000/6359097f8f7e91c476d1804b9446be26_400x400.png","Pepe",3));
+            listadoAlumno.add(new Alumno("https://pbs.twimg.com/profile_images/378800000705715000/6359097f8f7e91c476d1804b9446be26_400x400.png","Pepe",3));
+            listadoAlumno.add(new Alumno("https://pbs.twimg.com/profile_images/378800000705715000/6359097f8f7e91c476d1804b9446be26_400x400.png","Pepe",3));
 
             recyclerView.setAdapter(new MyAlumnoRecyclerViewAdapter(listadoAlumno, mListener, getActivity()));
         }

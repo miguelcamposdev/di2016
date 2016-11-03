@@ -14,7 +14,9 @@ import com.miguelcr.a07_recyclerviewalumnos.R;
 import com.miguelcr.a07_recyclerviewalumnos.fragments.dummy.DummyContent;
 import com.miguelcr.a07_recyclerviewalumnos.fragments.dummy.DummyContent.DummyItem;
 import com.miguelcr.a07_recyclerviewalumnos.interfaces.IAlumnoClickListener;
+import com.miguelcr.a07_recyclerviewalumnos.pojos.Alumno;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ListadoAlumnoFragment extends Fragment {
@@ -65,7 +67,13 @@ public class ListadoAlumnoFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyAlumnoRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+
+            List<Alumno> listadoAlumno = new ArrayList<>();
+            listadoAlumno.add(new Alumno("","Pepe",3));
+            listadoAlumno.add(new Alumno("","Pepe",3));
+            listadoAlumno.add(new Alumno("","Pepe",3));
+
+            recyclerView.setAdapter(new MyAlumnoRecyclerViewAdapter(listadoAlumno, mListener, getActivity()));
         }
         return view;
     }

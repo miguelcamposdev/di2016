@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="num_asignaturas_alumno"></string>
+    <string name="one_asignaturas_alumno">Matriculado en 1 asignatura</string>
+    <string name="minutes_ago">%1$d minutes ago</string>
+
+</resources>

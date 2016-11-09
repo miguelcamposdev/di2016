@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">08_RepasoRecyclerView</string>
+    <string name="escalas_directo">Directo</string>
+    <string name="escala">escala</string>
+    <string name="escalas">escalas</string>
+    <string name="currency">€</string>
+</resources>

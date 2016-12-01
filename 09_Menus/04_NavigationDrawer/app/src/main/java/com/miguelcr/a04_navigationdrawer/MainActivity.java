@@ -1,5 +1,8 @@
 package com.miguelcr.a04_navigationdrawer;
 
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,6 +16,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -41,6 +50,16 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        // Personalización del header del menú lateral
+        View header = navigationView.getHeaderView(0);
+        ImageView avatar = (ImageView) header.findViewById(R.id.image_view_avatar);
+        TextView username = (TextView) header.findViewById(R.id.text_view_username);
+        final LinearLayout linearLayoutHeader = (LinearLayout) header.findViewById(R.id.linear_layout_header);
+
+        Picasso.with(this).load("https://s3.amazonaws.com/uifaces/faces/twitter/dancounsell/128.jpg").into(avatar);
+
+        username.setText("Miguel Campos");
 
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.container,new FragmentUno()).commit();

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.miguelcr.a04_navigationdrawer">
-
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    package="com.miguelcr.a02_tabsactivity">
 
     <application
         android:allowBackup="true"

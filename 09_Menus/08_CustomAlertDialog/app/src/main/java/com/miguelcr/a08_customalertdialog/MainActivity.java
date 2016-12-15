@@ -1,5 +1,6 @@
 package com.miguelcr.a08_customalertdialog;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -32,6 +33,17 @@ public class MainActivity extends AppCompatActivity {
         DialogFragment dialogoBusqueda = new BusquedaDialogFragment();
         dialogoBusqueda.show(getSupportFragmentManager(), "Dialogo");
         dialogoBusqueda.setCancelable(false);
+        dialogoBusqueda.onDismiss(new DialogInterface() {
+            @Override
+            public void cancel() {
+
+            }
+
+            @Override
+            public void dismiss() {
+
+            }
+        });
 
     }
 

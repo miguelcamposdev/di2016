@@ -15,12 +15,17 @@ function restarProducto(idProducto) { // "restarProducto-1"
     spanCantidadProducto.innerHTML = cantidadProductoNueva;
 
     // Actualizo el precio totalizado del producto
-    ...
 
 }
 
 // Este método se lanza cuando la
 window.onload = function() {
-  document.getElementById("restarProducto-1").onclick = restarProducto("restarProducto-1");
-  document.getElementById("restarProducto-2").onclick = restarProducto("restarProducto-2");
+  document.getElementById("restarProducto-1").onclick = function() {
+    restarProducto("restarProducto-1");
+  }
+
+  document.getElementById("restarProducto-2").onclick = function() {
+    restarProducto("restarProducto-2");
+  }
+
 }

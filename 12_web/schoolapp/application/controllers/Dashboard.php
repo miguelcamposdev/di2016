@@ -11,14 +11,23 @@ class Dashboard extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('commons/header');
+
+		$datos = array(
+			'title' => "Dashboard"
+		);
+
+		$this->load->view('commons/header',$datos);
 		$this->load->view('dashboard');
 		$this->load->view('commons/footer');
 	}
 
 	public function users()
 	{
-		$this->load->view('commons/header');
+		$datos = array(
+			'title' => "Users"
+		);
+
+		$this->load->view('commons/header',$datos);
 		$this->load->view('users');
 		$this->load->view('commons/footer');
 	}

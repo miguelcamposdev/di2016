@@ -21,7 +21,8 @@ class Students extends CI_Controller {
 
 		//---------------   Cargo la vista 'commons/header.php'  ------------- /
 		$datos = array(
-			'title' => "Estudiantes" // En la vista 'header' tendré una variable $title
+			'title' => "Estudiantes", // En la vista 'header' tendré una variable $title
+			'username' => "pepito"
 		);
 		$this->load->view('commons/header',$datos);
 

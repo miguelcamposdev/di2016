@@ -52,6 +52,9 @@
                     <li>
                         <a href="#">Contact</a>
                     </li>
+                    <li>
+                        <a href="#"><?php echo $username; ?></a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

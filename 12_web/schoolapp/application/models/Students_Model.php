@@ -37,5 +37,14 @@ class Students_Model extends CI_Model {
 
         }
 
+        public function edit_estudiante($est) {
+          // UPDATE Estudiantes ... VALUES (...) WHERE id=...
+          $this->db->set('nombre', $est['nombre']);
+          $this->db->set('apellidos', $est['apellidos']);
+          $this->db->set('telefono', $est['telefono']);
+          $this->db->where('id', $est['id']);
+          $this->db->update('Estudiantes');
+        }
+
 
 }

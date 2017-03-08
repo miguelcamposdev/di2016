@@ -14,10 +14,19 @@
 <!-- /.container -->
 
 <!-- jQuery -->
-<script src="<?=site_url('assets/js/jquery.js');?>"></script>
+
 
 <!-- Bootstrap Core JavaScript -->
 <script src="<?=site_url('assets/js/bootstrap.min.js');?>"></script>
+
+
+<script src="<?=site_url('assets/js/jquery.js');?>"></script>
+
+<script>
+    var baseUrl = "<?=base_url()?>";
+</script>
+
+<script src="<?=site_url('assets/js/script_footer.js')?>"></script>
 
 </body>
 

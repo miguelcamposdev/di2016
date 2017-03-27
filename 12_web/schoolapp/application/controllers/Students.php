@@ -82,6 +82,18 @@ class Students extends CI_Controller {
 				redirect('students/lista/');
 		}
 	}
+	public function crudstudents() {
+		$this->load->library('grocery_CRUD');
+		$crud = new grocery_CRUD();
+		$crud->set_theme('bootstrap');
+		$crud->set_table('Estudiantes');
+		$crud->set_relation_n_n('matriculaciones', 'Matriculas', 'Asignaturas', 'idStudent', 'idAsignatura', '{nombre} - {Asignaturas.id}');
+		$crud->fields('nombre','apellidos','telefono','matriculaciones');
+
+		//$crud->unset_bootstrap();
+		$output = $crud->render();
+		$this->load->view('example.php',(array)$output);
+	}
 
 	public function editajax() {
 		$idE = $this->get("id");

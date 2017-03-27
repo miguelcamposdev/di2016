@@ -51,5 +51,32 @@ class Students extends REST_Controller {
       }
     }
 
+    public function login_post() {
+      $this->load->model('ion_auth_model');
+      $this->load->model('students_model');
+
+      $email = $this->input->post("e");
+      $pass = $this->input->post("p");
+
+      $usuario = $this->students_model->get_user_by_email($email);
+      $login = $this->ion_auth_model->hash_password_db($usuario->id,$pass);
+
+      if($login == TRUE) {
+        $this->set_response(array(
+        'status' => "success",
+        'data' => $usuario,
+        'mensaje'=>"Login correcto"
+        ), REST_Controller::HTTP_OK);
+      } else {
+        $this->set_response(
+          array(
+          'status' => "error",
+          'data' => null,
+          'mensaje'=>"Login incorrecto"
+        ), REST_Controller::HTTP_NOT_FOUND);
+      }
+
+    }
+
 
 }
